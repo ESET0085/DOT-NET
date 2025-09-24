@@ -1,16 +1,25 @@
-﻿namespace Inheritance_demo
+﻿
+using System;
+
+namespace PrinterExample
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            SavingsAccount acc = new SavingsAccount("SB001", "Amit Kumar", 1000.0);
-            acc.DisplayBalance();
-            acc.Deposit(500);
-            acc.Withdraw(200);
-            acc.ApplyInterest();
+            
+            EpsonPrinter epson = new EpsonPrinter();
+            Console.WriteLine("--- Epson Printer ---");
+            epson.PerformPrint(); 
+            epson.Print();        
 
-            Console.ReadLine();
+            Console.WriteLine(); 
+
+            
+            OtherPrinter other = new OtherPrinter();
+            Console.WriteLine("--- Other Printer ---");
+            other.PerformPrint(); 
+            other.Print();        
         }
     }
 }
